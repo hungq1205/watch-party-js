@@ -420,7 +420,7 @@ const MemberTabContent = ({ isActive, members, boxOwnerId, handleKick } : {  isA
             <div>
                 <ul className="member-box auth tab-list">
                     {members.map((member) => (
-                        <Member key={member.id} userId={member.id} name={member.username} isOwner={member.id === boxOwnerId} handleKick={handleKick} />
+                        <Member key={member.id} userId={member.id} name={member.username} ownerId={boxOwnerId} handleKick={handleKick} />
                     ))}
                 </ul>
             </div>
@@ -448,8 +448,10 @@ const MessageSender = ({ senderName, isUserSent }: { senderName: string, isUserS
     )
 }
 
-const Member = ({ userId, name, isOwner, handleKick }: { userId: number, name: string, isOwner: boolean, handleKick: (userId: number) => void }) => {
+const Member = ({ userId, name, ownerId, handleKick }: { userId: number, name: string, ownerId: number, handleKick: (userId: number) => void }) => {
+    const userCtx = useContext(UserContext)
     const setContextMenuState = useContext(GlobalPopupContext)?.setContextMenuState
+    const uid = userCtx!.user!.id
 
     const handleAddFriend = () => {
         fetch(
@@ -487,15 +489,15 @@ const Member = ({ userId, name, isOwner, handleKick }: { userId: number, name: s
     }
 
     return (
-        <li className={ isOwner ? "member-item owner" : "member-item" } data-user-id={userId} onContextMenu={handleContextMenu}>
+        <li className={ userId === ownerId ? "member-item owner" : "member-item" } data-user-id={userId} onContextMenu={handleContextMenu}>
             <div className="icon">
                 <FontAwesomeIcon icon={faUser} />
             </div>
             <div className="title">{name}</div>
             {
-                isOwner ? 
+                userId === ownerId ? 
                     <FontAwesomeIcon className="after" icon={faCrown} /> :
-                    <FontAwesomeIcon className="after" icon={faXmark} onClick={ () => handleKick(userId) }/>
+                    uid === ownerId && <FontAwesomeIcon className="after" icon={faXmark} onClick={ () => handleKick(userId) }/>
             }
         </li>
     )
@@ -670,7 +672,7 @@ const MovieBox = () => {
         <main className="d-flex vw-100 vh-100 overflow-hidden" style={{ paddingLeft: "75px" }} >
             <div className="player-container">
                 { box.movie ?
-                    <MediaContainer src={box.movie.url} playbackInfo={playbackInfo} control={ true } playerRef={playerRef} /> :
+                    <MediaContainer src={box.movie.url} playbackInfo={playbackInfo} control={ box.ownerId === user!.id } playerRef={playerRef} /> :
                     <MovieSearch movies={movies} visible={ box.ownerId === user!.id } setQuery={setQuery} onMovieSelect={patchMovie} />
                 }
                 <PlayerMenu 
