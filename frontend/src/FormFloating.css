@@ -1,0 +1,25 @@
+.form-control, .form-control:focus {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background: #212529;
+    height: 10px;
+}
+
+.form-floating {
+    margin-bottom: 12px;
+}
+
+.form-floating > input,
+.form-floating > input:focus {
+    border-radius: 6px;
+    color: rgb(225 225 225);
+}
+
+.form-floating > label::after { 
+    background-color: transparent !important;
+}
+
+.form-floating > label {
+    color: rgb(225 225 225) !important;
+}

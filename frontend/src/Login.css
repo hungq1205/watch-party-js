@@ -1,0 +1,39 @@
+.stadalone-logo {
+    text-align: center;
+    font-size: 80px;
+    color: rgb(225 225 225);
+    caret-color: transparent;
+}
+
+.operation-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+    caret-color: transparent;
+    cursor: default;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+    color: rgb(225 225 225);
+}
+
+#password::-ms-reveal {
+    filter: invert(100%);
+}
+
+.alter-option {
+    text-align: end;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-right: 12px;
+    font-weight: normal;
+    cursor: pointer;
+    caret-color: transparent;
+}

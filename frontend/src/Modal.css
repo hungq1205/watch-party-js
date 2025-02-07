@@ -1,0 +1,24 @@
+dialog {
+    background-color: rgb(22, 25, 28);
+    justify-items: center;
+    color: white;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(1px);
+}
+
+dialog input {
+    padding: 10px;
+    padding-left: 20px;
+}
+
+dialog h2 {
+    margin: 0 0 15px;
+    font-size: 1.5rem;
+}
+
+dialog > input[type="text"] {
+    caret-color: black;
+}

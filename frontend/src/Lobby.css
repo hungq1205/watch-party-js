@@ -1,0 +1,94 @@
+.container {
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 1.5rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+
+.new-box-button {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.new-box-button i {
+    margin-right: 8px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.movie-box {
+    display: flex;
+    background-color: #343a40;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 0;
+    height: 240px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.movie-box:hover {
+    box-shadow: 0 0 20px rgba(52, 52, 56, 0.8);
+    transform: scale(1.025);
+}
+
+.poster {
+    width: 180px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info {
+    padding: 10px;
+    padding-left: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 0px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    overflow-y: hidden;
+}
+
+.username, .members {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.progress-bar {
+    background-color: #555;
+    border-radius: 5px;
+    height: 10px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.progress {
+    background-color: #6c63ff;
+    height: 100%;
+    border-radius: 5px;
+}
