@@ -1,5 +1,6 @@
 # watch-party-js
 Movie watching app in group in real-time
+
 Backend communication is done via HTTP
 ![architecture](https://github.com/user-attachments/assets/457d244f-88f6-4c25-bbbf-4e7c1d123a66)
 
