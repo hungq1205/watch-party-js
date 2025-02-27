@@ -4,6 +4,10 @@ Movie watching app in group in real-time
 Backend communication is done via HTTP
 ![architecture](https://github.com/user-attachments/assets/457d244f-88f6-4c25-bbbf-4e7c1d123a66)
 
+API gateway is simulated with a proxy lib and gateway server also handles socket workload
+![image](https://github.com/user-attachments/assets/f7955cb7-3e9a-440e-9103-7370f8912691)
+
+
 # Demo ( interactions between user Bob and Alice) 
 1. Start by logging in or signing up new account
 
